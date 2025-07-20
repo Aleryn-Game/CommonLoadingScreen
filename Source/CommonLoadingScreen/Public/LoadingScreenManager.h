@@ -48,6 +48,18 @@ public:
 		return DebugReasonForShowingOrHidingLoadingScreen;
 	}
 
+	UFUNCTION(BlueprintCallable, Category=LoadingScreen)
+	float GetShaderPercentageDone() const
+	{
+		return ShaderProgression;
+	}
+
+	UFUNCTION(BlueprintCallable, Category=LoadingScreen)
+	bool ShouldShowProgressionBar() const
+	{
+		return bShowProgress;
+	}
+
 	/** Returns True when the loading screen is currently being shown */
 	bool GetLoadingScreenDisplayStatus() const
 	{
@@ -124,4 +136,12 @@ private:
 
 	/** True when the loading screen is currently being shown */
 	bool bCurrentlyShowingLoadingScreen = false;
+
+	
+	// Progress bar if we have to wait 
+	bool bShowProgress = false;
+	float Progression = 0.0;
+	
+	/** Shader progression **/
+	float ShaderProgression = 0.0;
 };

@@ -296,7 +296,7 @@ bool ULoadingScreenManager::CheckForAnyNeedToShowLoadingScreen()
 	if (Context->PendingNetGame != nullptr)
 	{
 		// Connecting to another server
-		DebugReasonForShowingOrHidingLoadingScreen = FString(TEXT("We are connecting to another server (PendingNetGame != nullptr)"));
+		DebugReasonForShowingOrHidingLoadingScreen = FString(TEXT("We are connecting to another server"));
 		return true;
 	}
 
@@ -391,7 +391,7 @@ bool ULoadingScreenManager::CheckForAnyNeedToShowLoadingScreen()
 	}
 
 	// Victory! The loading screen can go away now
-	DebugReasonForShowingOrHidingLoadingScreen = TEXT("(nothing wants to show it anymore)");
+	DebugReasonForShowingOrHidingLoadingScreen = TEXT("Loading completed");
 	return false;
 }
 
